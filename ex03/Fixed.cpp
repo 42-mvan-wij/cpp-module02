@@ -1,29 +1,32 @@
 #include <iostream>
 #include <cmath>
 #include "Fixed.hpp"
+#include "utils.hpp"
+
+# define COLOR YELLOW
 
 Fixed::Fixed() {
-	// std::cout << "Default constructor called" << std::endl;
+	// std::cout << COLOR << "Default constructor called" << RESET << std::endl;
 	this->fixedPointValue = 0;
 }
 
 Fixed::Fixed(int const val) {
-	// std::cout << "Int constructor called" << std::endl;
+	// std::cout << COLOR << "Int constructor called" << RESET << std::endl;
 	this->fixedPointValue = val << this->fractionalBits;
 }
 
 Fixed::Fixed(float const val) {
-	// std::cout << "Float constructor called" << std::endl;
+	// std::cout << COLOR << "Float constructor called" << RESET << std::endl;
 	this->fixedPointValue = roundf(val * (1 << this->fractionalBits));
 }
 
-Fixed::Fixed(const Fixed &src) {
-	// std::cout << "Copy constructor called" << std::endl;
-	*this = src;
+Fixed::Fixed(Fixed const &src) {
+	// std::cout << COLOR << "Copy constructor called" << RESET << std::endl;
+	this->fixedPointValue = src.fixedPointValue;
 }
 
-Fixed &Fixed::operator=(const Fixed &rhs) {
-	// std::cout << "Copy assignment operator called" << std::endl;
+Fixed &Fixed::operator=(Fixed const &rhs) {
+	// std::cout << COLOR << "Copy assignment operator called" << RESET << std::endl;
 	if (this == &rhs)
 		return *this;
 	this->fixedPointValue = rhs.fixedPointValue;
@@ -31,7 +34,7 @@ Fixed &Fixed::operator=(const Fixed &rhs) {
 }
 
 Fixed::~Fixed() {
-	// std::cout << "Destructor called" << std::endl;
+	// std::cout << COLOR << "Destructor called" << RESET << std::endl;
 }
 
 int Fixed::getRawBits() const {
@@ -39,7 +42,7 @@ int Fixed::getRawBits() const {
 }
 
 void Fixed::setRawBits(int const raw) {
-	// std::cout << "setRawBits member function called" << std::endl;
+	// std::cout << COLOR << "setRawBits member function called" << RESET << std::endl;
 	this->fixedPointValue = raw;
 }
 
@@ -92,12 +95,12 @@ Fixed Fixed::operator/(Fixed const &rhs) {
 }
 
 Fixed& Fixed::operator++() {
-	this->fixedPointValue++;
+	++this->fixedPointValue;
 	return *this;
 }
 
 Fixed& Fixed::operator--() {
-	this->fixedPointValue--;
+	--this->fixedPointValue;
 	return *this;
 }
 
@@ -141,3 +144,5 @@ std::ostream &operator<<(std::ostream &o, Fixed const &fixed) {
 	o << fixed.toFloat();
 	return o;
 }
+
+# undef COLOR
