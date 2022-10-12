@@ -4,21 +4,19 @@
 
 # define COLOR YELLOW
 
-Fixed::Fixed() {
+Fixed::Fixed(): fixedPointValue(0) {
 	std::cout << COLOR << "Default constructor called" << RESET << std::endl;
-	this->fixedPointValue = 0;
 }
 
-Fixed::Fixed(Fixed const &src) {
+Fixed::Fixed(Fixed const &src): fixedPointValue(src.fixedPointValue) {
 	std::cout << COLOR << "Copy constructor called" << RESET << std::endl;
-	this->fixedPointValue = src.fixedPointValue;
 }
 
 Fixed &Fixed::operator=(Fixed const &rhs) {
 	std::cout << COLOR << "Copy assignment operator called" << RESET << std::endl;
-	if (this != &rhs) {
-		this->fixedPointValue = rhs.fixedPointValue;
-	}
+	if (this == &rhs)
+		return *this;
+	this->fixedPointValue = rhs.fixedPointValue;
 	return *this;
 }
 

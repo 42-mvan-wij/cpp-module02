@@ -5,19 +5,16 @@
 
 # define COLOR YELLOW
 
-Fixed::Fixed() {
+Fixed::Fixed(): fixedPointValue(0) {
 	std::cout << COLOR << "Default constructor called" << RESET << std::endl;
-	this->fixedPointValue = 0;
 }
 
-Fixed::Fixed(int const val) {
+Fixed::Fixed(int const val): fixedPointValue(val << fractionalBits) {
 	std::cout << COLOR << "Int constructor called" << RESET << std::endl;
-	this->fixedPointValue = val << this->fractionalBits;
 }
 
-Fixed::Fixed(float const val) {
+Fixed::Fixed(float const val): fixedPointValue(roundf(val * (1 << fractionalBits))) {
 	std::cout << COLOR << "Float constructor called" << RESET << std::endl;
-	this->fixedPointValue = roundf(val * (1 << this->fractionalBits));
 }
 
 Fixed::Fixed(Fixed const &src) {

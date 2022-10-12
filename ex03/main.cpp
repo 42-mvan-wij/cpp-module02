@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 #include "Point.hpp"
 #include "utils.hpp"
 
