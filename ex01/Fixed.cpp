@@ -38,7 +38,6 @@ int Fixed::getRawBits() const {
 }
 
 void Fixed::setRawBits(int const raw) {
-	std::cout << COLOR << "setRawBits member function called" << RESET << std::endl;
 	this->fixedPointValue = raw;
 }
 

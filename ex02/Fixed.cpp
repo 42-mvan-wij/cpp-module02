@@ -17,9 +17,8 @@ Fixed::Fixed(float const val): fixedPointValue(roundf(val * (1 << fractionalBits
 	std::cout << COLOR << "Float constructor called" << RESET << std::endl;
 }
 
-Fixed::Fixed(Fixed const &src) {
+Fixed::Fixed(Fixed const &src): fixedPointValue(src.fixedPointValue) {
 	std::cout << COLOR << "Copy constructor called" << RESET << std::endl;
-	*this = src;
 }
 
 Fixed &Fixed::operator=(Fixed const &rhs) {
@@ -39,7 +38,6 @@ int Fixed::getRawBits() const {
 }
 
 void Fixed::setRawBits(int const raw) {
-	std::cout << COLOR << "setRawBits member function called" << RESET << std::endl;
 	this->fixedPointValue = raw;
 }
 
