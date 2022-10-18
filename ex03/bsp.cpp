@@ -18,7 +18,7 @@ bool bsp(Point const a, Point const b, Point const c, Point const point) {
 	// std::cout << COLOR << d1 << " - " << d4 << RESET << std::endl;
 	if (d1 == 0 || d4 == 0)
 		return false;
-	if (d1 > 0 != d4 > 0)
+	if ((d1 > 0) != (d4 > 0))
 		return false;
 
 	d2 = sign(b, c, point);
@@ -26,7 +26,7 @@ bool bsp(Point const a, Point const b, Point const c, Point const point) {
 	// std::cout << COLOR << d2 << " - " << d5 << RESET << std::endl;
 	if (d2 == 0 || d5 == 0)
 		return false;
-	if (d2 > 0 != d5 > 0)
+	if ((d2 > 0) != (d5 > 0))
 		return false;
 
 	d3 = sign(c, a, point);
@@ -34,7 +34,7 @@ bool bsp(Point const a, Point const b, Point const c, Point const point) {
 	// std::cout << COLOR << d3 << " - " << d6 << RESET << std::endl;
 	if (d3 == 0 || d6 == 0)
 		return false;
-	if (d3 > 0 != d6 > 0)
+	if ((d3 > 0) != (d6 > 0))
 		return false;
 
 	return true;

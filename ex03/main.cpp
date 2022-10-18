@@ -17,11 +17,33 @@ int main(void) {
 	Point a(0, 0);
 	Point b;
 	b = a;
-	std::cout << COLOR << "false: " << (bsp(Point(0, 0), Point(0, 0), Point(0, 0), Point(0, 0)) ? "true" : "false") << RESET << std::endl;
-	std::cout << COLOR << "true: " << (bsp(Point(-3, 0), Point(3, 0), Point(0, 3), Point(0, 1)) ? "true" : "false") << RESET << std::endl;
-	std::cout << COLOR << "false: " << (bsp(Point(-3, 0), Point(3, 0), Point(0, 3), Point(0, 0)) ? "true" : "false") << RESET << std::endl;
-	std::cout << COLOR << "false: " << (bsp(Point(-3, 0), Point(3, 0), Point(0, 3), Point(0, 3)) ? "true" : "false") << RESET << std::endl;
+
+	std::cout << std::boolalpha;
+
+	std::cout << COLOR << "expect `false`, got: `" << bsp(Point(0, 0), Point(0, 0), Point(0, 0), Point(0, 0)) << "`" << RESET << std::endl;
+	std::cout << COLOR << "expect `true`, got: `" << bsp(Point(-3, 0), Point(3, 0), Point(0, 3), Point(0, 1)) << "`" << RESET << std::endl;
+	std::cout << COLOR << "expect `false`, got: `" << bsp(Point(-3, 0), Point(3, 0), Point(0, 3), Point(0, 0)) << "`" << RESET << std::endl;
+	std::cout << COLOR << "expect `false`, got: `" << bsp(Point(-3, 0), Point(3, 0), Point(0, 3), Point(0, 3)) << "`" << RESET << std::endl;
 	return 0;
 }
 
 # undef COLOR
+
+/*
+
+3|      C
+2|
+1|      P
+0|A           B
+----------------
+ |0 1 2 3 4 5 6
+
+
+3|      C
+2|
+1|
+0|A     P     B
+----------------
+ |0 1 2 3 4 5 6
+
+*/
