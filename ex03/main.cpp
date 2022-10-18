@@ -1,9 +1,6 @@
 #include <iostream>
 #include <cstdlib>
 #include "Point.hpp"
-#include "utils.hpp"
-
-# define COLOR BLUE
 
 bool bsp(Point const a, Point const b, Point const c, Point const point);
 
@@ -15,19 +12,16 @@ void check_leaks() {
 int main(void) {
 	atexit(&check_leaks);
 	Point a(0, 0);
-	Point b;
-	b = a;
+	Point b(0, 1); // Dont't know whether to commit this
 
 	std::cout << std::boolalpha;
 
-	std::cout << COLOR << "expect `false`, got: `" << bsp(Point(0, 0), Point(0, 0), Point(0, 0), Point(0, 0)) << "`" << RESET << std::endl;
-	std::cout << COLOR << "expect `true`, got: `" << bsp(Point(-3, 0), Point(3, 0), Point(0, 3), Point(0, 1)) << "`" << RESET << std::endl;
-	std::cout << COLOR << "expect `false`, got: `" << bsp(Point(-3, 0), Point(3, 0), Point(0, 3), Point(0, 0)) << "`" << RESET << std::endl;
-	std::cout << COLOR << "expect `false`, got: `" << bsp(Point(-3, 0), Point(3, 0), Point(0, 3), Point(0, 3)) << "`" << RESET << std::endl;
+	std::cout << "expect: `false`, got: `" << bsp(Point(0, 0), Point(0, 0), Point(0, 0), Point(0, 0)) << "`" << std::endl;
+	std::cout << "expect: `true`, got: `" << bsp(Point(-3, 0), Point(3, 0), Point(0, 3), Point(0, 1)) << "`" << std::endl;
+	std::cout << "expect: `false`, got: `" << bsp(Point(-3, 0), Point(3, 0), Point(0, 3), Point(0, 0)) << "`" << std::endl;
+	std::cout << "expect: `false`, got: `" << bsp(Point(-3, 0), Point(3, 0), Point(0, 3), Point(0, 3)) << "`" << std::endl;
 	return 0;
 }
-
-# undef COLOR
 
 /*
 

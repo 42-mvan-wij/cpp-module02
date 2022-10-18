@@ -1,9 +1,6 @@
 #include <iostream>
 #include <cstdlib>
 #include "Fixed.hpp"
-#include "utils.hpp"
-
-# define COLOR BLUE
 
 void check_leaks() {
 	std::cout << std::endl;
@@ -21,28 +18,26 @@ int main( void ) {
 
 	std::cout << std::endl;
 
-	std::cout << COLOR << "a is " << a << RESET << std::endl;
-	std::cout << COLOR << "b is " << b << RESET << std::endl;
-	std::cout << COLOR << "c is " << c << RESET << std::endl;
-	std::cout << COLOR << "d is " << d << RESET << std::endl;
+	std::cout << "a is " << a << std::endl;
+	std::cout << "b is " << b << std::endl;
+	std::cout << "c is " << c << std::endl;
+	std::cout << "d is " << d << std::endl;
 
 	std::cout << std::endl;
 
-	std::cout << COLOR << "a is " << a.toInt() << " as integer" << RESET << std::endl;
-	std::cout << COLOR << "b is " << b.toInt() << " as integer" << RESET << std::endl;
-	std::cout << COLOR << "c is " << c.toInt() << " as integer" << RESET << std::endl;
-	std::cout << COLOR << "d is " << d.toInt() << " as integer" << RESET << std::endl;
+	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 
 	std::cout << std::endl;
 
-	std::cout << COLOR << "a is " << a.toFloat() << " as float" << RESET << std::endl;
-	std::cout << COLOR << "b is " << b.toFloat() << " as float" << RESET << std::endl;
-	std::cout << COLOR << "c is " << c.toFloat() << " as float" << RESET << std::endl;
-	std::cout << COLOR << "d is " << d.toFloat() << " as float" << RESET << std::endl;
+	std::cout << "a is " << a.toFloat() << " as float" << std::endl;
+	std::cout << "b is " << b.toFloat() << " as float" << std::endl;
+	std::cout << "c is " << c.toFloat() << " as float" << std::endl;
+	std::cout << "d is " << d.toFloat() << " as float" << std::endl;
 
 	std::cout << std::endl;
 
 	return 0;
 }
-
-# undef COLOR

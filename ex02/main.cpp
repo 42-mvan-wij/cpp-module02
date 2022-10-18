@@ -1,9 +1,6 @@
 #include <iostream>
 #include <cstdlib>
 #include "Fixed.hpp"
-#include "utils.hpp"
-
-# define COLOR BLUE
 
 void check_leaks() {
 	std::cout << std::endl;
@@ -17,39 +14,37 @@ int main( void ) {
 
 	std::cout << std::boolalpha;
 
-	std::cout << COLOR << "a: " << a << RESET << std::endl;
-	std::cout << COLOR << "++a: " << ++a << RESET << std::endl;
-	std::cout << COLOR << "a: " << a << RESET << std::endl;
-	std::cout << COLOR << "a++: " << a++ << RESET << std::endl;
-	std::cout << COLOR << "a: " << a << RESET << std::endl;
-	std::cout << COLOR << "b: " << b << RESET << std::endl;
-	std::cout << COLOR << "max(a, b): " << Fixed::max( a, b ) << RESET << std::endl;
+	std::cout << "a: " << a << std::endl;
+	std::cout << "++a: " << ++a << std::endl;
+	std::cout << "a: " << a << std::endl;
+	std::cout << "a++: " << a++ << std::endl;
+	std::cout << "a: " << a << std::endl;
+	std::cout << "b: " << b << std::endl;
+	std::cout << "max(a, b): " << Fixed::max( a, b ) << std::endl;
 
 	std::cout << std::endl;
 
-	std::cout << COLOR << "b < b: " << (b < b) << RESET << std::endl;
-	std::cout << COLOR << "b <= b: " << (b <= b) << RESET << std::endl;
-	std::cout << COLOR << "b > b: " << (b > b) << RESET << std::endl;
-	std::cout << COLOR << "b >= b: " << (b >= b) << RESET << std::endl;
-	std::cout << COLOR << "b == b: " << (b == b) << RESET << std::endl;
+	std::cout << "b < b: " << (b < b) << std::endl;
+	std::cout << "b <= b: " << (b <= b) << std::endl;
+	std::cout << "b > b: " << (b > b) << std::endl;
+	std::cout << "b >= b: " << (b >= b) << std::endl;
+	std::cout << "b == b: " << (b == b) << std::endl;
 
 	std::cout << std::endl;
 
-	std::cout << COLOR << "a < b: " << (a < b) << RESET << std::endl;
-	std::cout << COLOR << "a <= b: " << (a <= b) << RESET << std::endl;
-	std::cout << COLOR << "a > b: " << (a > b) << RESET << std::endl;
-	std::cout << COLOR << "a >= b: " << (a >= b) << RESET << std::endl;
-	std::cout << COLOR << "a == b: " << (a == b) << RESET << std::endl;
+	std::cout << "a < b: " << (a < b) << std::endl;
+	std::cout << "a <= b: " << (a <= b) << std::endl;
+	std::cout << "a > b: " << (a > b) << std::endl;
+	std::cout << "a >= b: " << (a >= b) << std::endl;
+	std::cout << "a == b: " << (a == b) << std::endl;
 
 	std::cout << std::endl;
 
-	std::cout << COLOR << "min(a, b): " << Fixed::min( a, b ) << RESET << std::endl;
-	std::cout << COLOR << "a: " << a << RESET << std::endl;
-	std::cout << COLOR << "a--: " << a-- << RESET << std::endl;
-	std::cout << COLOR << "a: " << a << RESET << std::endl;
-	std::cout << COLOR << "--a: " << --a << RESET << std::endl;
-	std::cout << COLOR << "a: " << a << RESET << std::endl;
+	std::cout << "min(a, b): " << Fixed::min( a, b ) << std::endl;
+	std::cout << "a: " << a << std::endl;
+	std::cout << "a--: " << a-- << std::endl;
+	std::cout << "a: " << a << std::endl;
+	std::cout << "--a: " << --a << std::endl;
+	std::cout << "a: " << a << std::endl;
 	return 0;
 }
-
-# undef COLOR
