@@ -24,11 +24,21 @@ int main( void ) {
 
 	std::cout << std::endl;
 
+	std::cout << "min(a, b): " << Fixed::min( a, b ) << std::endl;
+	std::cout << "a: " << a << std::endl;
+	std::cout << "a--: " << a-- << std::endl;
+	std::cout << "a: " << a << std::endl;
+	std::cout << "--a: " << --a << std::endl;
+	std::cout << "a: " << a << std::endl;
+
+	std::cout << std::endl;
+
 	std::cout << "b < b: " << (b < b) << std::endl;
 	std::cout << "b <= b: " << (b <= b) << std::endl;
 	std::cout << "b > b: " << (b > b) << std::endl;
 	std::cout << "b >= b: " << (b >= b) << std::endl;
 	std::cout << "b == b: " << (b == b) << std::endl;
+	std::cout << "b != b: " << (b != b) << std::endl;
 
 	std::cout << std::endl;
 
@@ -37,14 +47,22 @@ int main( void ) {
 	std::cout << "a > b: " << (a > b) << std::endl;
 	std::cout << "a >= b: " << (a >= b) << std::endl;
 	std::cout << "a == b: " << (a == b) << std::endl;
+	std::cout << "a != b: " << (a != b) << std::endl;
 
 	std::cout << std::endl;
 
-	std::cout << "min(a, b): " << Fixed::min( a, b ) << std::endl;
+	a = Fixed(3);
 	std::cout << "a: " << a << std::endl;
-	std::cout << "a--: " << a-- << std::endl;
-	std::cout << "a: " << a << std::endl;
-	std::cout << "--a: " << --a << std::endl;
-	std::cout << "a: " << a << std::endl;
+	std::cout << "b: " << b << std::endl;
+
+	std::cout << std::endl;
+
+	std::cout << "a + b: " << (a + b) << std::endl;
+	std::cout << "a - b: " << (a - b) << std::endl;
+	std::cout << "b - a: " << (b - a) << std::endl;
+	std::cout << "a * b: " << (a * b) << std::endl;
+	std::cout << "a / b: " << (a / b) << std::endl;
+	std::cout << "b / a: " << (b / a) << std::endl;
+
 	return 0;
 }
