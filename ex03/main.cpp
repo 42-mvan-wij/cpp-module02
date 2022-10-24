@@ -16,10 +16,12 @@ int main(void) {
 
 	std::cout << std::boolalpha;
 
-	std::cout << "expect: `false`, got: `" << bsp(Point(0, 0), Point(0, 0), Point(0, 0), Point(0, 0)) << "`" << std::endl;
-	std::cout << "expect: `true`, got: `" << bsp(Point(-3, 0), Point(3, 0), Point(0, 3), Point(0, 1)) << "`" << std::endl;
-	std::cout << "expect: `false`, got: `" << bsp(Point(-3, 0), Point(3, 0), Point(0, 3), Point(0, 0)) << "`" << std::endl;
-	std::cout << "expect: `false`, got: `" << bsp(Point(-3, 0), Point(3, 0), Point(0, 3), Point(0, 3)) << "`" << std::endl;
+	std::cout << "expect: false, got: " << bsp(Point(0, 0), Point(0, 0), Point(0, 0), Point(0, 0)) << std::endl;
+	std::cout << "expect: false, got: " << bsp(Point(-3, 0), Point(3, 0), Point(3, 0), Point(0, 1)) << std::endl;
+	std::cout << "expect: true, got: " << bsp(Point(-3, 0), Point(3, 0), Point(0, 3), Point(0, 1)) << std::endl;
+	std::cout << "expect: false, got: " << bsp(Point(-3, 0), Point(3, 0), Point(0, 3), Point(0, 50)) << std::endl;
+	std::cout << "expect: false, got: " << bsp(Point(-3, 0), Point(3, 0), Point(0, 3), Point(0, 0)) << std::endl;
+	std::cout << "expect: false, got: " << bsp(Point(-3, 0), Point(3, 0), Point(0, 3), Point(0, 3)) << std::endl;
 	return 0;
 }
 
