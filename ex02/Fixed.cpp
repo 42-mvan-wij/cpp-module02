@@ -70,19 +70,19 @@ bool Fixed::operator!=(Fixed const &rhs) const {
 	return this->getRawBits() != rhs.getRawBits();
 }
 
-Fixed Fixed::operator+(Fixed const &rhs) {
+Fixed Fixed::operator+(Fixed const &rhs) const {
 	return Fixed(this->toFloat() + rhs.toFloat());
 }
 
-Fixed Fixed::operator-(Fixed const &rhs) {
+Fixed Fixed::operator-(Fixed const &rhs) const {
 	return Fixed(this->toFloat() - rhs.toFloat());
 }
 
-Fixed Fixed::operator*(Fixed const &rhs) {
+Fixed Fixed::operator*(Fixed const &rhs) const {
 	return Fixed(this->toFloat() * rhs.toFloat());
 }
 
-Fixed Fixed::operator/(Fixed const &rhs) {
+Fixed Fixed::operator/(Fixed const &rhs) const {
 	return Fixed(this->toFloat() / rhs.toFloat());
 }
 
