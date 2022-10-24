@@ -11,8 +11,14 @@ void check_leaks() {
 
 int main(void) {
 	atexit(&check_leaks);
-	Point a(0, 0);
-	Point b(0, 1); // Dont't know whether to commit this
+
+	Point a;
+	Point b(5, 1);
+	Point c(b);
+
+	std::cout << "a: " << a << std::endl;
+	std::cout << "b: " << b << std::endl;
+	std::cout << "c: " << c << std::endl;
 
 	std::cout << std::boolalpha;
 

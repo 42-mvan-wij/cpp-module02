@@ -1,18 +1,15 @@
 #include <iostream>
 #include "Point.hpp"
-#include "utils.hpp"
-
-# define COLOR GREEN
 
 Point::Point(): x(0), y(0) {
 }
 
 Point::Point(float const x, float const y) : x(x), y(y) {
-	// std::cout << COLOR << "`Point::Point(float const x, float const y)` called" << RESET << std::endl;
+	// std::cout << "`Point::Point(float const x, float const y)` called" << std::endl;
 }
 
 Point::Point(const Point &src) : x(src.x), y(src.y) {
-	// std::cout << COLOR << "Point copy constructor called" << RESET << std::endl;
+	// std::cout << "Point copy constructor called" << std::endl;
 }
 
 Point &Point::operator=(const Point &rhs) {
@@ -33,4 +30,7 @@ Fixed const& Point::getY() const {
 	return this->y;
 }
 
-# undef COLOR
+
+std::ostream &operator<<(std::ostream &s, Point const &point) {
+	return (s << "(" << point.getX() << ", " << point.getY() << ")");
+}

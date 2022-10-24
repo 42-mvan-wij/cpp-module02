@@ -20,4 +20,6 @@ class Point {
 
 };
 
+std::ostream &operator<<(std::ostream &s, Point const &point);
+
 #endif
