@@ -6,11 +6,11 @@ bool bsp(Point const a, Point const b, Point const c, Point const point);
 
 void check_leaks() {
 	std::cout << std::endl;
-	system("leaks -q bsp");
+	std::system("leaks -q bsp");
 }
 
 int main(void) {
-	atexit(&check_leaks);
+	std::atexit(&check_leaks);
 
 	Point a;
 	Point b(5, 1);
@@ -25,9 +25,11 @@ int main(void) {
 	std::cout << "expect: false, got: " << bsp(Point(0, 0), Point(0, 0), Point(0, 0), Point(0, 0)) << std::endl;
 	std::cout << "expect: false, got: " << bsp(Point(-3, 0), Point(3, 0), Point(3, 0), Point(0, 1)) << std::endl;
 	std::cout << "expect: true, got: " << bsp(Point(-3, 0), Point(3, 0), Point(0, 3), Point(0, 1)) << std::endl;
-	std::cout << "expect: false, got: " << bsp(Point(-3, 0), Point(3, 0), Point(0, 3), Point(0, 50)) << std::endl;
+	std::cout << "expect: true, got: " << bsp(Point(-7, 5), Point(-9, 5), Point(12, 0), Point(8, 1)) << std::endl;
+	std::cout << "expect: false, got: " << bsp(Point(-3, 0), Point(3, 0), Point(0, 3), Point(0, 5)) << std::endl;
 	std::cout << "expect: false, got: " << bsp(Point(-3, 0), Point(3, 0), Point(0, 3), Point(0, 0)) << std::endl;
 	std::cout << "expect: false, got: " << bsp(Point(-3, 0), Point(3, 0), Point(0, 3), Point(0, 3)) << std::endl;
+
 	return 0;
 }
 

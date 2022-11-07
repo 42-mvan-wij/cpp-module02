@@ -4,11 +4,11 @@
 
 void check_leaks() {
 	std::cout << std::endl;
-	system("leaks -q fixed-point-3");
+	std::system("leaks -q fixed-point-3");
 }
 
 int main( void ) {
-	atexit(&check_leaks);
+	std::atexit(&check_leaks);
 	Fixed a;
 	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 
